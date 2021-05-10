@@ -1,4 +1,4 @@
-package server.web.dto;
+package com.sciencemj.server.web.dto;
 import com.sciencemj.server.web.dto.HelloResponseDto;
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
