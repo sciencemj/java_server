@@ -1,0 +1,8 @@
+server/web/dto/HelloResponseDtoTest.java
+ server.web.dto.HelloResponseDtoTest
+server/domain/posts/PostsRepositoryTest.java
+ server.domain.posts.PostsRepositoryTest
+server/web/HelloControllerTest.java
+ server.web.HelloControllerTest
+server/ApplicationTest.java
+ server.ApplicationTest

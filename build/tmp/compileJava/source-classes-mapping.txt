@@ -1,0 +1,18 @@
+com/sciencemj/server/web/dto/PostsSaveRequestDto.java
+ com.sciencemj.server.web.dto.PostsSaveRequestDto
+ com.sciencemj.server.web.dto.PostsSaveRequestDto$PostsSaveRequestDtoBuilder
+com/sciencemj/server/domain/posts/PostsRepository.java
+ com.sciencemj.server.domain.posts.PostsRepository
+com/sciencemj/server/web/PostsApiController.java
+ com.sciencemj.server.web.PostsApiController
+com/sciencemj/server/web/dto/HelloResponseDto.java
+ com.sciencemj.server.web.dto.HelloResponseDto
+com/sciencemj/server/Application.java
+ com.sciencemj.server.Application
+com/sciencemj/server/domain/posts/Posts.java
+ com.sciencemj.server.domain.posts.Posts
+ com.sciencemj.server.domain.posts.Posts$PostsBuilder
+com/sciencemj/server/web/HelloController.java
+ com.sciencemj.server.web.HelloController
+com/sciencemj/server/service/posts/PostsService.java
+ com.sciencemj.server.service.posts.PostsService

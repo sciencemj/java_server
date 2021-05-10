@@ -1,4 +1,4 @@
-package com.sciencemj.server.domain.posts;
+package com.sciencemj.server.domain;
 
 import com.sciencemj.server.domain.posts.Posts;
 import com.sciencemj.server.domain.posts.PostsRepository;
@@ -7,7 +7,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDateTime;
@@ -46,5 +45,23 @@ public class PostsRepositoryTest {
         Posts posts = postsList.get(0);
         assertThat(posts.getTitle()).isEqualTo(title);
         assertThat(posts.getContent()).isEqualTo(content);
+    }
+
+    @Test
+    public void BaseTimeEntity_등록(){
+        LocalDateTime now = LocalDateTime.of(2021,5,9,12,0);
+        postsRepository.save(Posts.builder()
+        .title("title")
+        .content("content")
+        .author("sciencemj").build());
+
+        List<Posts> postsList = postsRepository.findAll();
+
+        Posts posts = postsList.get(0);
+
+        System.out.println(">>>> createdDate=" + posts.getCreatedDate() + ", modifiedDate=" + posts.getModifiedDate());
+
+        assertThat(posts.getCreatedDate()).isAfter(now);
+        assertThat(posts.getModifiedDate()).isAfter(now);
     }
 }
