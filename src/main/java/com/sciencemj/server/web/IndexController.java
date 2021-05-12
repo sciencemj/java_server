@@ -2,6 +2,8 @@ package com.sciencemj.server.web;
 
 import com.sciencemj.server.service.posts.PostsService;
 import com.sciencemj.server.web.dto.PostsResponseDto;
+import com.sciencemj.server.config.auth.LoginUser;
+import com.sciencemj.server.config.auth.dto.SessionUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,9 +15,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class IndexController {
 
     private final PostsService postsService;
+
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user){
         model.addAttribute("posts", postsService.findAllDesc());
+        if (user != null && user.getName() != null) {
+            model.addAttribute("userName", user.getName());
+        }
         return "index";
     }
 
