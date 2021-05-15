@@ -1,5 +1,6 @@
 package com.sciencemj.server.config.auth;
 
+import com.sciencemj.server.domain.user.Role;
 import com.sciencemj.server.domain.user.User;
 import com.sciencemj.server.domain.user.UserRepository;
 import com.sciencemj.server.config.auth.dto.OAuthAttributes;
@@ -38,7 +39,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         httpSession.setAttribute("user", new SessionUser(user));
 
         return new DefaultOAuth2User(
-                Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())),
+                Collections.singleton(new SimpleGrantedAuthority(Role.USER.getKey())),
                 attributes.getAttributes(),
                 attributes.getNameAttributeKey());
     }
