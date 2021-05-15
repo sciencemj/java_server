@@ -18,7 +18,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@TestPropertySource("classpath:application.properties")
 public class PostsRepositoryTest {
 
     @Autowired
