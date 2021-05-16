@@ -18,7 +18,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
-@ActiveProfiles("test")
+@TestPropertySource("classpath:application-test.properties")
 @SpringBootTest
 public class PostsRepositoryTest {
 

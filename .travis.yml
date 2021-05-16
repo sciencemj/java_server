@@ -11,8 +11,7 @@ cache:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
 
-script: "./gradlew clean build \
-  -Dspring.config.location=classpath:application-test.properties"
+script: "./gradlew clean build"
 
 notifications:
   email:
